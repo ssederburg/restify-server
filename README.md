@@ -53,3 +53,4 @@ To create a new Web API:
 6. Create Route Handler inside Router.init method
 7. All handlers should be asynchronous
 8. Write Unit Tests in `./test` folder for service
+9. Document API in `swagger.json` document

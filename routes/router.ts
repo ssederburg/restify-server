@@ -4,7 +4,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 
 import { HealthCheckRoute, HelloWorldRoute } from './'
-import { ErrorHandler } from '../common'
+import { ErrorHandler, SwaggerService } from '../common'
 
 export class Router {
 
@@ -27,6 +27,11 @@ export class Router {
             This section is responsible for serving static content AFTER all other routes are handled
             Lastly, there is a handler to gracefully handle 'Resource Not Found' 404 status
         */
+        if (config.serveSwagger) {
+            console.log('Serving swagger content')
+            const swaggerService = new SwaggerService(this.server)
+            swaggerService.init()
+        }
         // Check if should serve static
         if (config.serveStaticPath) {
             const sharePath = config.serveStaticPath //e.g. ./public/

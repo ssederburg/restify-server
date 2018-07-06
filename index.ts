@@ -13,6 +13,7 @@ console.log('Starting Server')
 const server = rs.init()
 
 const errorHandler = new ErrorHandler(server)
+
 const router = new Router(server, errorHandler)
 router.init(config.apiPrefix)
 

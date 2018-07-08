@@ -6,26 +6,32 @@
   "scripts": {
     "start": "nodemon -r ts-node/register index.ts",
     "test": "mocha --require ts-node/register --watch-extensions ts,tsx 'test/**/*.{ts,tsx}'",
-    "build": "node -r ts-node/register localbuilder.ts"
+    "build": "node -r ts-node/register localbuilder.ts -dev",
+    "bundle": "node -r ts-node/register localbuilder.ts -prod"
   },
   "author": "Steven Sederburg <stevenscloud@live.com>",
   "license": "ISC",
   "dependencies": {
     "config": "^1.30.0",
     "dotenv": "^6.0.0",
+    "lodash": "^4.17.10",
     "nodemon": "^1.17.5",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "restify": "^7.2.1"
   },
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/cross-spawn": "^6.0.0",
     "@types/es6-promise": "^3.3.0",
     "@types/mocha": "^5.2.4",
     "@types/node": "^10.5.1",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "chalk": "^2.4.1",
     "cross-spawn": "^6.0.5",
+    "fs-extra": "^6.0.1",
+    "glob": "^7.1.2",
     "mocha": "^5.2.0",
     "ts-node": "^7.0.0",
     "typescript": "^2.9.2"

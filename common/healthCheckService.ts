@@ -6,8 +6,9 @@ export class HealthCheckService {
     public static get(): Promise<ResponseModel> {
         
         const result: ResponseModel = new ResponseModel()
-        //             Get Environment Variable List (  Obfuscate                ,  Remove         )
-        result.data = Utilities.environmentVariables([],[])
+        result.data = {
+            RunningProperly: true
+        }
         result.message = 'No Rest for Old Men'
         return Promise.resolve(result);
 

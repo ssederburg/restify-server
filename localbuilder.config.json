@@ -1,22 +1,98 @@
 {
-    "package": {
-        "name": "ods-conditioner",
-        "version": "1.0.0",
-        "description": "",
-        "author": "Steven Sederburg",
-        "license": "ISC",
-        "dependencies": {
-            "config": "^1.30.0",
-            "dotenv": "^5.0.1",
-            "nodemon": "^1.17.3",
-            "request": "^2.85.0",
-            "request-promise": "^4.2.2",
-            "restify": "^7.1.1"            
+    "any": {
+        "comments": "these settings apply for any build UNLESS there is a prod or dev field.",
+        "package": {
+            "name": "restify-server",
+            "version": "1.0.0",
+            "description": "Basic Restify Node Server scaffold",
+            "main": "index.js",
+            "scripts": {
+                "start": "nodemon index.js",
+                "test": "mocha"
+            },
+            "author": "Steven Sederburg",
+            "license": "ISC",
+            "nodemonConfig": {
+                "ignore": []
+            },
+            "dependencies": {
+                "config": "^1.30.0",
+                "dotenv": "^5.0.1",
+                "lodash": "^4.17.10",
+                "nodemon": "^1.17.3",
+                "request": "^2.85.0",
+                "request-promise": "^4.2.2",
+                "restify": "^7.1.1"            
+            },
+            "devDependencies": {
+                "chai": "^4.1.2",
+                "chai-as-promised": "^7.1.1",
+                "mocha": "^5.2.0"           
+            }
         },
-        "devDependencies": {
-            "chai": "^4.1.2",
-            "chai-as-promised": "^7.1.1",
-            "mocha": "^5.2.0"           
+        "override-settings": "",
+        "override-config": "",
+        "assets": [
+            "/public/**"
+        ],
+        "exclude": [    
+        ]
+    },
+    "prod": {
+        "comments": "renaming this to 'prod' results in these settings being applied to the build with -prod flag",
+        "package": {
+            "name": "restify-server-prod",
+            "version": "1.0.0",
+            "description": "Basic Restify Node Server scaffold",
+            "main": "index.js",
+            "scripts": {
+                "start": "NODE_ENV=production node index.js"
+            },
+            "author": "Steven Sederburg",
+            "license": "ISC",
+            "dependencies": {
+                "config": "^1.30.0",
+                "dotenv": "^5.0.1",
+                "nodemon": "^1.17.3",
+                "request": "^2.85.0",
+                "request-promise": "^4.2.2",
+                "restify": "^7.1.1"            
+            }
+        },
+        "preserveDevDependencies": false,
+        "exclude": [
+            "/.gitignore",
+            "/swagger.json",
+            "/test"
+        ]
+    },
+    "dev": {
+        "comments": "renaming this to 'dev' results in these settings being applied to the build with -dev (default) flag",
+        "package": {
+            "name": "restify-server-dev",
+            "main": "index.js",
+            "scripts": {
+                "start": "nodemon index.js",
+                "test": "mocha"
+            },
+            "author": "Steven Sederburg",
+            "license": "ISC",
+            "nodemonConfig": {
+                "ignore": []
+            },
+            "dependencies": {
+                "config": "^1.30.0",
+                "dotenv": "^5.0.1",
+                "nodemon": "^1.17.3",
+                "request": "^2.85.0",
+                "request-promise": "^4.2.2",
+                "restify": "^7.1.1"            
+            },
+            "devDependencies": {
+                "chai": "^4.1.2",
+                "chai-as-promised": "^7.1.1",
+                "mocha": "^5.2.0"           
+            }
         }
     }
 }

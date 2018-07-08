@@ -47,10 +47,13 @@ Anything created in `./public/` will be served as is e.g. Angular, React, Vue, P
 To create a new Web API:
 1. Create Service file in `./app/` folder
 2. Export Service Class from `./app/index.ts`
-3. Create Route in `./routes/`. Can copy `./routes/healthCheckRoute.ts` for simple sample
+3. Create Route in `./routes/`
 4. Export Route in `./routes/index.ts`
 5. Import Route in `./routes/router.ts`
-6. Create Route Handler inside Router.init method
+6. Create Route Handler inside `Router.init()` method
 7. All handlers should be asynchronous
 8. Write Unit Tests in `./test` folder for service
 9. Document API in `swagger.json` document
+
+### todo
+1. Support for Swagger UI rendering off of `./swagger.io`
